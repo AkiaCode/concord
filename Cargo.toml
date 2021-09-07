@@ -1,0 +1,24 @@
+[package]
+name = "concord"
+version = "0.1.0"
+edition = "2018"
+license = "Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "concord"
+crate-type = ["rlib", "cdylib"]
+
+
+[dependencies]
+pyo3 = { version = "0.14.4", features = ["extension-module"] }
+tungstenite = { version = "0.15.0", features = ["native-tls"]}
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["raw_value"] }
+ctrlc = "3.2.0"
+pythonize = "0.14.0"
+pyo3-log = "0.4.0"
+log = "0.4.14"
+reqwest = { version = "0.11.4", features = ["blocking"] }
+pyo3-asyncio = "0.14.0"
