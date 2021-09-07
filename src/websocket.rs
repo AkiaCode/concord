@@ -130,7 +130,7 @@ impl DiscordProtocol {
     }
 
     pub fn heartbeat(&mut self) {
-        println!("Sending heartbeat, last_heartbeat: {}, heartbeat_interval: {}", self.last_heartbeat.elapsed().as_millis(), self.heartbeat_interval);
+        debug!("Sending heartbeat, last_heartbeat: {}, heartbeat_interval: {}", self.last_heartbeat.elapsed().as_millis(), self.heartbeat_interval);
 
         self.ws.write_message(Message::Text(json!({
             "op": OpCode::HEARTBEAT,
