@@ -13,7 +13,8 @@ class Client:
 
     def on(self, event_name: Literal['Ready', 'MessageCreate']):
         def wrapper(func):
-            self.listeners[event_name] = func
+            if event_name == 'MessageCreate':
+                self.listeners[event_name] = func
             return func
         return wrapper
 
